@@ -1,0 +1,23 @@
+<div class="main" >
+  <app-header></app-header>
+  <div class="main-info">
+    <div *ngFor="let iterList of person; index as i">
+    <app-profile
+      [person]="iterList"
+      *ngIf="i === activePerson"
+      ></app-profile>
+    </div>
+    <div class="main-info-grid1">
+      <h5>Contacts</h5>
+      <div class="navigation-bottom-menu-bottom scrollbar" id="style-2">
+        <app-list
+          *ngFor="let iterList of person; index as i"
+          [person]="iterList"
+          (click)="log(i)"
+        ></app-list>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <app-footer></app-footer>
+</div>
